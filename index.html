@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL VIDEOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="feed" id="feed">
+  <!-- JS দ্বারা 10 Post auto generate হবে -->
+</div>
+
+<script>
+  // 🔹 10 Post এর জন্য Image link (আপনি চাইলে এখানে নিজে change করতে পারবেন)
+  const images = [
+    'https://i.postimg.cc/fbzTgV1L/aa.jpg',
+    'https://i.postimg.cc/HWc5tNwW/bb.jpg',
+    'https://i.postimg.cc/d1zhXq2J/cc.jpg',
+    'https://i.postimg.cc/02160y5N/31511981-095-015f.jpg',
+    'https://i.postimg.cc/5tyj2Hgk/40326127-140-c0f7.jpg',
+    'https://i.postimg.cc/kGQgpWMg/45542261-032-76f1.jpg',
+    'https://i.postimg.cc/dt90RRSg/78992867-049-ffc6.jpg',
+    'https://i.postimg.cc/SKnNpBQP/83014134-058-de5a.jpg',
+    'https://i.postimg.cc/1RGRPcPw/89601928-043-49c6.jpg',
+    'https://i.postimg.cc/xdNYZLtL/2983680-1dd0106-1200x1200.jpg'
+  ];
+
+  // 🔹 Random profile names
+  const names = ['Alexza 18+xx', 'MimQueen xxx', 'RiyaMoon XNXX', 'JannatX xxx', 'SabrinaLux xxx', 'LiaaStar xnxx', 'NinaJoy xvideo', 'EmmaLux xxx', 'MiaSky 18+xx', 'SophiaX xx46'];
+
+  const feed = document.getElementById('feed');
+
+  // 🔹 Random Like / Comment / Share / Save numbers
+  function randomNumber(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min);
+  }
+
+  // 🔹 Generate Posts
+  images.forEach((img, i)=>{
+    const post = document.createElement('div');
+    post.className='post';
+    post.style.backgroundImage=`url('${img}')`;
+
+    // click → direct Adsterra link
+    post.addEventListener('click', ()=>{
+      window.location.href = 'https://eavesdropbogusye.com/q10mddsre?key=e19d04aba95c2773741401250eef804d'; // 🔴 এখানে direct link বসাবেন
+    });
+
+    // inner HTML
+    post.innerHTML=`
+      <!-- Play Button -->
+      <div class="play-btn"><div class="triangle"></div></div>
+
+      <!-- Profile + Follow -->
+      <div class="profile">
+        <img src="${img}" alt="Profile">
+        <div class="user">
+          <span class="username">${names[i]}</span>
+          <span class="fb-verify"></span>
+        </div>
+        <div class="follow">Follow</div>
+      </div>
+
+      <!-- Comment box -->
+      <div class="comment-box" contenteditable="true" data-placeholder="Add a comment…"></div>
+
+      <!-- Right side icons -->
+      <div class="actions">
+        <div class="icon">❤<span>${randomNumber(10,100)}k</span></div>
+        <div class="icon">💬<span>${randomNumber(1,10)}k</span></div>
+        <div class="icon">⤴<span>${randomNumber(1,5)}k</span></div>
+        <div class="icon">💾<span>${randomNumber(1,5)}k</span></div>
+      </div>
+    `;
+
+    feed.appendChild(post);
+  });
+</script>
+
+</body>
+</html>
