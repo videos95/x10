@@ -1,0 +1,114 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#000;font-family:Arial;overflow-x:hidden;}
+
+.feed{
+  height:100vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+}
+
+/* Post */
+.post{
+  height:100vh;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  scroll-snap-align:start;
+  cursor:pointer;
+}
+
+/* Play button */
+.play-btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.triangle{
+  width:0;
+  height:0;
+  border-left:28px solid white;
+  border-top:16px solid transparent;
+  border-bottom:16px solid transparent;
+}
+
+/* Profile + Follow */
+.profile{
+  position:absolute;
+  bottom:90px;
+  left:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+}
+.profile img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+}
+.user{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-weight:600;
+}
+.fb-verify{
+  width:14px;
+  height:14px;
+  background:#1877f2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-left:4px;
+  clip-path: polygon(
+    50% 0%,65% 8%,82% 18%,92% 35%,100% 50%,92% 65%,82% 82%,65% 92%,50% 100%,35% 92%,18% 82%,8% 65%,0% 50%,8% 35%,18% 18%,35% 8%
+  );
+}
+.follow{
+  border:1px solid #fff;
+  padding:4px 10px;
+  border-radius:4px;
+  font-size:13px;
+  margin-left:8px;
+}
+
+/* Comment box */
+.comment-box{
+  position:absolute;
+  bottom:20px;
+  left:15px;
+  right:15px;
+  height:38px;
+  background:rgba(0,0,0,0.3);
+  border-radius:20px;
+  padding:0 10px;
+  color:#fff;
+}
+.comment-box:empty:before{
+  content:attr(data-placeholder);
+  color:rgba(255,255,255,0.6);
+}
+
+/* Right side icons */
+.actions{
+  position:absolute;
+  right:10px;
+  bottom:120px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  color:white;
+  text-align:center;
+}
+.icon span{
+  display:block;
+  font-size:12px;
+}
